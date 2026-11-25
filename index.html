@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ku" dir="rtl">
+<head>
+    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LAYAN Kucher لایەن کوچەر</title>
+  <meta name="description" content="Official website of LAYAN Kucher - لایەن کوچەر ">
+  <meta name="keywords" content="LAYAN Kucher لایەن کوچەر Portfolio, Web Developer">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAYANKUCHER - لایەن کوچەر</title>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- CSS File -->
+    <link rel="stylesheet" href="tu.css">
+</head>
+<body>
+
+    <!-- Header / Navigation -->
+    <header class="navbar">
+        <div class="logo">LAYANKUCHER</div>
+        
+        <nav class="nav-links">
+            <a href="#" class="active">سەرەکی</a>
+            <a href="#categories">کاتیگۆری</a>
+            <a href="#products">بەرهەم</a>
+            <a href="#order-section">داخاز کرن</a>
+        </nav>
+
+        <div class="search-box">
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            <input type="text" id="searchInput" placeholder="گەڕیان ل بەرهەمان...">
+        </div>
+
+        <div class="nav-actions">
+            <div class="cart-btn" id="cartBtn">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <span class="cart-badge" id="cartBadge">0</span>
+            </div>
+            <i class="fa-solid fa-bars mobile-menu-btn" id="menuBtn"></i>
+        </div>
+    </header>
+
+    <!-- Sidebar Cart Panel -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <aside class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>سەبەتەیا کڕینێ</h3>
+            <i class="fa-solid fa-xmark close-cart" id="closeCart"></i>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <p class="empty-msg">سەبەتەیا تە بەتالە!</p>
+        </div>
+        <div class="cart-footer">
+            <div class="total-price">
+                <span>کۆم ب گشتی:</span>
+                <span id="cartTotal">$0.00</span>
+            </div>
+            <a href="#order-section" class="checkout-btn" onclick="closeCartSidebar()">تەمام کرنا کرینێ و زێدە کرنا ناڤونیشانا</a>
+        </div>
+    </aside>
+
+    <!-- Main Container -->
+    <main class="container">
+        
+        <!-- Hero Section -->
+        <section class="hero-card">
+            <div class="hero-text">
+                <span class="sub-title">Beats Solo</span>
+                <h1>Wireless<br>HEADPHONE</h1>
+                <p>دەنگەکێ زەلال و کوالێتیەکا بەرز ب شێوازەکێ مۆدێرن و بێ تەل.</p>
+                <button class="btn-buy" onclick="addToCart(1)">ئەڤرۆ بکڕە</button>
+            </div>
+            <div class="hero-img">
+                <img src="headset3.jpg" alt="Headphone Hero">
+            </div>
+        </section>
+
+        <!-- Categories Grid -->
+        <section class="categories-grid" id="categories">
+            <div class="cat-card bg-black text-white">
+                <div class="cat-info">
+                    <span>چێژ و دەنگ</span>
+                    <h3>Heddphone</h3>
+                    <a href="#products" class="cat-btn">بینین</a>
+                </div>
+                <img src="headset1.jpg" alt="Heddphone">
+            </div>
+
+            <div class="cat-card bg-yellow">
+                <div class="cat-info">
+                    <span>کامیرە یێن نوی</span>
+                    <h3>Camera</h3>
+                    <a href="#products" class="cat-btn text-yellow">بینین</a>
+                </div>
+                <img src="camera4.jpg" alt="Camera">
+            </div>
+
+            <div class="cat-card bg-red text-white">
+                <div class="cat-info">
+                    <span>لاپتوپ گیمینگ</span>
+                    <h3>Laptop</h3>
+                    <a href="#products" class="cat-btn text-red">بینین</a>
+                </div>
+                <img src="MSI 144hz.jpg" alt="Laptop">
+            </div>
+
+            <div class="cat-card bg-gray">
+                <div class="cat-info">
+                    <span>CONSOLE</span>
+                    <h3>PS5</h3>
+                    <a href="#products" class="cat-btn">بینین</a>
+                </div>
+                <img src="ps5.jpg" alt="Console">
+            </div>
+
+            <div class="cat-card bg-green text-white">
+                <div class="cat-info">
+                    <span>GPU</span>
+                    <h3>RTX</h3>
+                    <a href="#products" class="cat-btn text-green">بینین</a>
+                </div>
+                <img src="rt2070.jpg" alt="Oculus">
+            </div>
+
+            <div class="cat-card bg-blue text-white">
+                <div class="cat-info">
+                    <span>کیبورد</span>
+                    <h3>Keyboard</h3>
+                    <a href="#products" class="cat-btn text-blue">بینین</a>
+                </div>
+                <img src="Keyboard4.jpg" alt="Keyboard">
+            </div>
+            
+
+
+            
+            
+
+            
+            
+            
+        </section>
+
+        <!-- Product Grid Section -->
+        <section class="products-section" id="products">
+            <h2 class="section-title">بەرهەمێن نوو و پڕفرۆش</h2>
+            <div class="products-grid" id="productsContainer">
+                <!-- Data dynamically inserted via JavaScript -->
+            </div>
+        </section>
+
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- WhatsApp Direct Order Form Section -->
+        <section class="order-section" id="order-section">
+            <div class="order-card">
+                <h2><i class="fa-brands fa-whatsapp"></i> داخاز کرنا بەرهەمان ب ڕێکا واتسئابێ</h2>
+                <p>زانیاریێن خۆ بنڤێسە دا کو داخاز یی تە ڕاستەوخۆ بۆ واتسئابا مە بهێتە داخاز کرن لگەڵ هەمی بەرهەمێن ناو سەبەتێ.</p>
+                
+                <form id="orderForm">
+                    <div class="form-group">
+                        <label for="clientName"><i class="fa-solid fa-user"></i> ناڤێ تە کامڵ:</label>
+                        <input type="text" id="clientName" required placeholder="ناڤێ خۆ ل ڤێرە بنڤێسە">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="clientPhone"><i class="fa-solid fa-phone"></i> ژمارەیا واتسئابێ:</label>
+                        <input type="tel" id="clientPhone" required placeholder="0750XXXXXXX">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="clientAddress"><i class="fa-solid fa-location-dot"></i> نیشانی / ناڤنیشان (شار - تاخ):</label>
+                        <input type="text" id="clientAddress" required placeholder="دهۆک، سەنتەر...">
+                    </div>
+
+                    <button type="submit" class="submit-whatsapp-btn">
+                        <i class="fa-brands fa-whatsapp"></i> ڕەوانەکرنا داواکاریێ بۆ واتسئابێ
+                    </button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- JavaScript File -->
+    <script src="am.js"></script>
+</body>
+</html>
